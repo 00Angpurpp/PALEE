@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="it">
 <head>
 <meta charset="UTF-8">
@@ -33,762 +32,760 @@
   --safe-bot: env(safe-area-inset-bottom, 0px);
 }
 
-- { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-  html { height:100%; background:#080808; }
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html { height:100%; background:#080808; }
 
 body {
-background: #080808 !important;
-color: #f2f2f2 !important;
-font-family: ‘DM Sans’, sans-serif;
-height: 100%;
-overflow: hidden;
-position: fixed;
-width: 100%;
+  background: #080808 !important;
+  color: #f2f2f2 !important;
+  font-family: 'DM Sans', sans-serif;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 
 /* ── LAYOUT ── */
 #app {
-display: flex;
-flex-direction: column;
-height: 100%;
-padding-top: var(–safe-top);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: var(--safe-top);
 }
 
 .screen {
-display: none;
-flex: 1;
-overflow-y: auto;
-overflow-x: hidden;
--webkit-overflow-scrolling: touch;
-padding-bottom: calc(80px + var(–safe-bot));
+  display: none;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: calc(80px + var(--safe-bot));
 }
 .screen.active { display: block; }
 
 /* ── BOTTOM NAV ── */
 #nav {
-position: fixed;
-bottom: 0; left: 0; right: 0;
-height: calc(64px + var(–safe-bot));
-background: rgba(10,10,10,0.95);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-border-top: 1px solid var(–border);
-display: flex;
-align-items: flex-start;
-padding-top: 8px;
-z-index: 100;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: calc(64px + var(--safe-bot));
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  padding-top: 8px;
+  z-index: 100;
 }
 
 .nav-btn {
-flex: 1;
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 4px;
-background: none;
-border: none;
-color: var(–muted);
-cursor: pointer;
-padding: 4px 0;
-transition: color 0.2s;
-font-family: ‘DM Sans’, sans-serif;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color 0.2s;
+  font-family: 'DM Sans', sans-serif;
 }
-.nav-btn.active { color: var(–acc); }
+.nav-btn.active { color: var(--acc); }
 .nav-icon { font-size: 20px; line-height: 1; }
 .nav-label { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
 
 /* ── SHARED COMPONENTS ── */
 .page-header {
-padding: 24px 20px 16px;
-border-bottom: 1px solid var(–border);
-position: sticky;
-top: 0;
-background: rgba(8,8,8,0.95);
-backdrop-filter: blur(16px);
--webkit-backdrop-filter: blur(16px);
-z-index: 10;
+  padding: 24px 20px 16px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(8,8,8,0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 10;
 }
 .page-tag {
-font-size: 10px;
-letter-spacing: 3px;
-text-transform: uppercase;
-color: var(–acc);
-margin-bottom: 4px;
-font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--acc);
+  margin-bottom: 4px;
+  font-weight: 500;
 }
 .page-title {
-font-family: ‘Bebas Neue’, sans-serif;
-font-size: 36px;
-letter-spacing: 2px;
-line-height: 1;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  letter-spacing: 2px;
+  line-height: 1;
 }
 
 .section-label {
-font-size: 10px;
-letter-spacing: 3px;
-text-transform: uppercase;
-color: var(–muted);
-padding: 20px 20px 10px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 20px 20px 10px;
 }
 
 /* ── HOME SCREEN ── */
-#screen-home { padding-bottom: calc(80px + var(–safe-bot)); }
+#screen-home { padding-bottom: calc(80px + var(--safe-bot)); }
 
 .hero {
-padding: 28px 20px 20px;
-background: linear-gradient(135deg, #0f0f0f 0%, #080808 100%);
-border-bottom: 1px solid var(–border);
-position: relative;
-overflow: hidden;
+  padding: 28px 20px 20px;
+  background: linear-gradient(135deg, #0f0f0f 0%, #080808 100%);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
 }
 .hero::after {
-content: ‘’;
-position: absolute;
-top: -60px; right: -60px;
-width: 200px; height: 200px;
-border-radius: 50%;
-background: radial-gradient(circle, #c8ff0015 0%, transparent 70%);
-pointer-events: none;
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #c8ff0015 0%, transparent 70%);
+  pointer-events: none;
 }
 .hero-date {
-color: #888 !important;
-font-size: 11px;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(–muted2);
-margin-bottom: 6px;
+  color: #888 !important;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted2);
+  margin-bottom: 6px;
 }
 .hero-greeting {
-font-family: ‘Bebas Neue’, sans-serif;
-font-size: 44px;
-letter-spacing: 2px;
-line-height: 1;
-margin-bottom: 4px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 44px;
+  letter-spacing: 2px;
+  line-height: 1;
+  margin-bottom: 4px;
 }
-.hero-greeting span { color: var(–acc); }
+.hero-greeting span { color: var(--acc); }
 .hero-sub { font-size: 13px; color: #888 !important; margin-bottom: 20px; }
 
 .streak-row {
-display: flex;
-gap: 12px;
+  display: flex;
+  gap: 12px;
 }
 .streak-pill {
-background: var(–s2);
-border: 1px solid var(–border);
-border-radius: 20px;
-padding: 8px 14px;
-display: flex;
-align-items: center;
-gap: 8px;
+  background: var(--s2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .streak-num {
-font-family: ‘Bebas Neue’, sans-serif;
-font-size: 22px;
-color: var(–acc);
-letter-spacing: 1px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  color: var(--acc);
+  letter-spacing: 1px;
 }
-.streak-txt { font-size: 11px; color: var(–muted2); }
+.streak-txt { font-size: 11px; color: var(--muted2); }
 
 /* TODAY CARD */
 .today-card {
-margin: 16px;
-background: var(–s2);
-border: 1px solid var(–border);
-border-radius: 16px;
-overflow: hidden;
+  margin: 16px;
+  background: var(--s2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
 }
 .today-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 16px 18px 12px;
-border-bottom: 1px solid var(–border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px 12px;
+  border-bottom: 1px solid var(--border);
 }
 .today-title {
-font-family: ‘Bebas Neue’, sans-serif;
-font-size: 20px;
-letter-spacing: 1px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 .today-badge {
-font-size: 10px;
-font-weight: 600;
-letter-spacing: 1px;
-text-transform: uppercase;
-padding: 4px 10px;
-border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
 }
-.badge-train { background: #c8ff0020; color: var(–acc); }
-.badge-swim  { background: #4da6ff20; color: var(–blue); }
-.badge-rest  { background: #55555520; color: var(–muted2); }
+.badge-train { background: #c8ff0020; color: var(--acc); }
+.badge-swim  { background: #4da6ff20; color: var(--blue); }
+.badge-rest  { background: #55555520; color: var(--muted2); }
 
 /* QUICK LOG */
 .quick-log {
-margin: 0 16px 16px;
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 10px;
+  margin: 0 16px 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 .log-tile {
-background: var(–s2);
-border: 1px solid var(–border);
-border-radius: 14px;
-padding: 16px;
-cursor: pointer;
-transition: border-color 0.2s, background 0.2s;
-position: relative;
-overflow: hidden;
+  background: var(--s2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative;
+  overflow: hidden;
 }
-.log-tile:active { background: var(–s3); }
+.log-tile:active { background: var(--s3); }
 .log-tile.done { border-color: #c8ff0040; }
 .log-tile.done::after {
-content: ‘✓’;
-position: absolute;
-top: 10px; right: 12px;
-font-size: 12px;
-color: var(–acc);
-font-weight: 700;
+  content: '✓';
+  position: absolute;
+  top: 10px; right: 12px;
+  font-size: 12px;
+  color: var(--acc);
+  font-weight: 700;
 }
 .tile-icon { font-size: 22px; margin-bottom: 8px; }
 .tile-label { font-size: 12px; font-weight: 500; color: #f2f2f2 !important; }
-.tile-sub { font-size: 11px; color: var(–muted2); margin-top: 2px; }
+.tile-sub { font-size: 11px; color: var(--muted2); margin-top: 2px; }
 
 /* WATER TRACKER */
 .water-card {
-margin: 0 16px 16px;
-background: var(–s2);
-border: 1px solid var(–border);
-border-radius: 16px;
-padding: 16px 18px;
+  margin: 0 16px 16px;
+  background: var(--s2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 18px;
 }
 .water-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
 }
 .water-title { font-size: 13px; font-weight: 500; }
 .water-amount {
-font-family: ‘Bebas Neue’, sans-serif;
-font-size: 22px;
-letter-spacing: 1px;
-color: var(–blue);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: var(--blue);
 }
 .water-glasses {
-display: flex;
-gap: 8px;
-flex-wrap: wrap;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 .glass-btn {
-width: 36px; height: 36px;
-border-radius: 10px;
-border: 1.5px solid var(–border);
-background: none;
-font-size: 16px;
-cursor: pointer;
-transition: all 0.15s;
-display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border);
+  background: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex; align-items: center; justify-content: center;
 }
 .glass-btn.filled {
-background: #4da6ff25;
-border-color: var(–blue);
+  background: #4da6ff25;
+  border-color: var(--blue);
 }
 
 /* SLEEP CARD */
 .sleep-card {
-margin: 0 16px 16px;
-background: var(–s2);
-border: 1px solid var(–border);
-border-radius: 16px;
-padding: 16px 18px;
+  margin: 0 16px 16px;
+  background: var(--s2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 18px;
 }
 .sleep-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
 }
 .sleep-title { font-size: 13px; font-weight: 500; }
 .sleep-val {
-font-family: ‘Bebas Neue’, sans-serif;
-font-size: 22px;
-letter-spacing: 1px;
-color: #b084ff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: #b084ff;
 }
 .sleep-btns {
-display: flex;
-gap: 8px;
-flex-wrap: wrap;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 .sleep-opt {
-padding: 7px 14px;
-border-radius: 20px;
-border: 1.5px solid var(–border);
-background: none;
-color: var(–muted2);
-font-size: 12px;
-font-weight: 500;
-cursor: pointer;
-font-family: ‘DM Sans’, sans-serif;
-transition: all 0.15s;
+  padding: 7px 14px;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: none;
+  color: var(--muted2);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.15s;
 }
 .sleep-opt.sel {
-background: #b084ff20;
-border-color: #b084ff;
-color: #b084ff;
+  background: #b084ff20;
+  border-color: #b084ff;
+  color: #b084ff;
 }
 
 /* ── SCHEDA SCREEN ── */
 .day-row {
-margin: 0 16px 10px;
-background: var(–s2);
-border: 1px solid var(–border);
-border-radius: 14px;
-overflow: hidden;
-transition: border-color 0.2s;
+  margin: 0 16px 10px;
+  background: var(--s2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.2s;
 }
 .day-row.swim-day { border-color: #4da6ff30; }
 .day-row.rest-day { opacity: 0.55; }
 
 .day-row-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 14px 16px;
-cursor: pointer;
-user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
 }
 .day-row-left { display: flex; align-items: center; gap: 12px; }
 .day-dot {
-width: 8px; height: 8px;
-border-radius: 50%;
-background: var(–acc);
-flex-shrink: 0;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--acc);
+  flex-shrink: 0;
 }
-.swim-day .day-dot { background: var(–blue); }
-.rest-day .day-dot { background: var(–muted); }
+.swim-day .day-dot { background: var(--blue); }
+.rest-day .day-dot { background: var(--muted); }
 .day-row-name {
-font-family: ‘Bebas Neue’, sans-serif;
-font-size: 18px;
-letter-spacing: 1px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
 }
-.day-row-focus { font-size: 11px; color: var(–muted2); }
+.day-row-focus { font-size: 11px; color: var(--muted2); }
 .day-chevron {
-font-size: 12px;
-color: var(–muted);
-transition: transform 0.25s;
+  font-size: 12px;
+  color: var(--muted);
+  transition: transform 0.25s;
 }
 .day-row.open .day-chevron { transform: rotate(180deg); }
 
 .day-exercises {
-display: none;
-padding: 0 16px 14px;
-border-top: 1px solid var(–border);
+  display: none;
+  padding: 0 16px 14px;
+  border-top: 1px solid var(--border);
 }
 .day-row.open .day-exercises { display: block; }
 
 .ex-item {
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
-padding: 10px 0;
-border-bottom: 1px solid #1a1a1a;
-gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid #1a1a1a;
+  gap: 10px;
 }
 .ex-item:last-child { border-bottom: none; }
 .ex-name { font-size: 13px; font-weight: 500; }
-.ex-note { font-size: 11px; color: var(–muted2); margin-top: 2px; line-height: 1.4; }
-.ex-sets { font-size: 12px; color: var(–acc); font-weight: 600; white-space: nowrap; padding-top: 2px; }
+.ex-note { font-size: 11px; color: var(--muted2); margin-top: 2px; line-height: 1.4; }
+.ex-sets { font-size: 12px; color: var(--acc); font-weight: 600; white-space: nowrap; padding-top: 2px; }
 
 /* ── DIARIO SCREEN ── */
 .date-strip {
-display: flex;
-gap: 8px;
-padding: 12px 16px;
-overflow-x: auto;
--webkit-overflow-scrolling: touch;
-scrollbar-width: none;
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
 .date-strip::-webkit-scrollbar { display: none; }
 .date-chip {
-flex-shrink: 0;
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 3px;
-padding: 10px 12px;
-border-radius: 12px;
-border: 1.5px solid var(–border);
-background: var(–s2);
-cursor: pointer;
-transition: all 0.15s;
-min-width: 52px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  background: var(--s2);
+  cursor: pointer;
+  transition: all 0.15s;
+  min-width: 52px;
 }
-.date-chip.today { border-color: var(–acc); }
+.date-chip.today { border-color: var(--acc); }
 .date-chip.has-log { position: relative; }
 .date-chip.has-log::after {
-content: ‘’;
-position: absolute;
-bottom: 6px;
-width: 4px; height: 4px;
-border-radius: 50%;
-background: var(–acc);
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--acc);
 }
 .date-chip.sel {
-background: #c8ff0015;
-border-color: var(–acc);
+  background: #c8ff0015;
+  border-color: var(--acc);
 }
-.chip-day { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(–muted2); }
-.chip-num { font-family: ‘Bebas Neue’, sans-serif; font-size: 20px; letter-spacing: 1px; }
+.chip-day { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted2); }
+.chip-num { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 1px; }
 
 .log-form { padding: 0 16px; }
 
 .log-section {
-background: var(–s2);
-border: 1px solid var(–border);
-border-radius: 14px;
-margin-bottom: 12px;
-overflow: hidden;
+  background: var(--s2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 12px;
+  overflow: hidden;
 }
 .log-section-title {
-font-size: 11px;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(–muted2);
-padding: 14px 16px 10px;
-border-bottom: 1px solid var(–border);
-font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted2);
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
 }
 
 /* CHECKBOXES */
 .check-list { padding: 8px 0; }
 .check-item {
-display: flex;
-align-items: center;
-gap: 12px;
-padding: 10px 16px;
-cursor: pointer;
-transition: background 0.15s;
-border-bottom: 1px solid #151515;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.15s;
+  border-bottom: 1px solid #151515;
 }
 .check-item:last-child { border-bottom: none; }
-.check-item:active { background: var(–s3); }
+.check-item:active { background: var(--s3); }
 .check-box {
-width: 20px; height: 20px;
-border-radius: 6px;
-border: 1.5px solid var(–border);
-flex-shrink: 0;
-display: flex; align-items: center; justify-content: center;
-transition: all 0.15s;
-font-size: 11px;
+  width: 20px; height: 20px;
+  border-radius: 6px;
+  border: 1.5px solid var(--border);
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+  font-size: 11px;
 }
 .check-item.checked .check-box {
-background: var(–acc);
-border-color: var(–acc);
-color: #000;
-font-weight: 700;
+  background: var(--acc);
+  border-color: var(--acc);
+  color: #000;
+  font-weight: 700;
 }
 .check-text { font-size: 13px; color: #f2f2f2 !important; }
-.check-sub { font-size: 11px; color: var(–muted2); margin-top: 1px; }
+.check-sub { font-size: 11px; color: var(--muted2); margin-top: 1px; }
 
 /* RATING */
 .rating-row {
-display: flex;
-gap: 8px;
-padding: 12px 16px;
-align-items: center;
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  align-items: center;
 }
-.rating-label { font-size: 12px; color: var(–muted2); flex: 1; }
+.rating-label { font-size: 12px; color: var(--muted2); flex: 1; }
 .rating-stars { display: flex; gap: 6px; }
 .star {
-font-size: 20px;
-cursor: pointer;
-opacity: 0.3;
-transition: opacity 0.15s, transform 0.1s;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.3;
+  transition: opacity 0.15s, transform 0.1s;
 }
 .star.lit { opacity: 1; }
 .star:active { transform: scale(1.3); }
 
 /* NOTES TEXTAREA */
 .notes-area {
-width: 100%;
-background: none;
-border: none;
-color: #f2f2f2 !important;
-font-family: ‘DM Sans’, sans-serif;
-font-size: 14px;
-line-height: 1.7;
-padding: 14px 16px;
-resize: none;
-min-height: 100px;
-outline: none;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #f2f2f2 !important;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  padding: 14px 16px;
+  resize: none;
+  min-height: 100px;
+  outline: none;
 }
-.notes-area::placeholder { color: var(–muted); }
+.notes-area::placeholder { color: var(--muted); }
 
 /* SAVE BTN */
 .save-btn {
-width: 100%;
-background: var(–acc);
-color: #000;
-border: none;
-border-radius: 14px;
-padding: 16px;
-font-family: ‘Bebas Neue’, sans-serif;
-font-size: 18px;
-letter-spacing: 2px;
-cursor: pointer;
-margin: 4px 0 16px;
-transition: opacity 0.15s, transform 0.1s;
+  width: 100%;
+  background: var(--acc);
+  color: #000;
+  border: none;
+  border-radius: 14px;
+  padding: 16px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin: 4px 0 16px;
+  transition: opacity 0.15s, transform 0.1s;
 }
 .save-btn:active { opacity: 0.85; transform: scale(0.98); }
 
 /* HISTORY */
 .history-item {
-margin: 0 16px 10px;
-background: var(–s2);
-border: 1px solid var(–border);
-border-radius: 14px;
-padding: 14px 16px;
+  margin: 0 16px 10px;
+  background: var(--s2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
 }
 .history-date {
-font-family: ‘Bebas Neue’, sans-serif;
-font-size: 16px;
-letter-spacing: 1px;
-color: var(–acc);
-margin-bottom: 8px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: var(--acc);
+  margin-bottom: 8px;
 }
 .history-chips {
-display: flex;
-gap: 6px;
-flex-wrap: wrap;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 .h-chip {
-font-size: 10px;
-padding: 3px 10px;
-border-radius: 20px;
-background: var(–s3);
-color: var(–muted2);
-border: 1px solid var(–border);
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--s3);
+  color: var(--muted2);
+  border: 1px solid var(--border);
 }
-.h-chip.done { background: #c8ff0015; color: var(–acc); border-color: #c8ff0030; }
+.h-chip.done { background: #c8ff0015; color: var(--acc); border-color: #c8ff0030; }
 
 /* ── NOTE SCREEN ── */
 .note-composer {
-margin: 0 16px 12px;
-background: var(–s2);
-border: 1px solid var(–border);
-border-radius: 14px;
-overflow: hidden;
+  margin: 0 16px 12px;
+  background: var(--s2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
 }
 .note-input {
-width: 100%;
-background: none;
-border: none;
-color: #f2f2f2 !important;
-font-family: ‘DM Sans’, sans-serif;
-font-size: 14px;
-line-height: 1.7;
-padding: 14px 16px;
-resize: none;
-height: 90px;
-outline: none;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #f2f2f2 !important;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  padding: 14px 16px;
+  resize: none;
+  height: 90px;
+  outline: none;
 }
-.note-input::placeholder { color: var(–muted); }
+.note-input::placeholder { color: var(--muted); }
 .note-footer {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 10px 14px;
-border-top: 1px solid var(–border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-top: 1px solid var(--border);
 }
 .note-tags { display: flex; gap: 6px; }
 .tag-btn {
-font-size: 10px;
-padding: 4px 10px;
-border-radius: 20px;
-border: 1.5px solid var(–border);
-background: none;
-color: var(–muted2);
-cursor: pointer;
-font-family: ‘DM Sans’, sans-serif;
-transition: all 0.15s;
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: none;
+  color: var(--muted2);
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.15s;
 }
-.tag-btn.sel { background: #c8ff0015; border-color: var(–acc); color: var(–acc); }
+.tag-btn.sel { background: #c8ff0015; border-color: var(--acc); color: var(--acc); }
 .note-send {
-background: var(–acc);
-color: #000;
-border: none;
-border-radius: 10px;
-padding: 8px 18px;
-font-family: ‘Bebas Neue’, sans-serif;
-font-size: 14px;
-letter-spacing: 1px;
-cursor: pointer;
+  background: var(--acc);
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 18px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .note-card {
-margin: 0 16px 10px;
-background: var(–s2);
-border: 1px solid var(–border);
-border-radius: 14px;
-padding: 14px 16px;
+  margin: 0 16px 10px;
+  background: var(--s2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
 }
 .note-card-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
 }
-.note-card-date { font-size: 11px; color: var(–muted2); }
+.note-card-date { font-size: 11px; color: var(--muted2); }
 .note-card-tag {
-font-size: 10px;
-padding: 3px 8px;
-border-radius: 20px;
-background: #c8ff0015;
-color: var(–acc);
-border: 1px solid #c8ff0030;
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background: #c8ff0015;
+  color: var(--acc);
+  border: 1px solid #c8ff0030;
 }
 .note-card-body { font-size: 13px; line-height: 1.6; color: #f2f2f2 !important; }
 .note-del {
-background: none;
-border: none;
-color: var(–muted);
-font-size: 16px;
-cursor: pointer;
-padding: 0 0 0 8px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 0 0 8px;
 }
 
 /* ── STATS SCREEN ── */
 .stats-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 10px;
-padding: 0 16px;
-margin-bottom: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 0 16px;
+  margin-bottom: 12px;
 }
 .stat-card {
-background: var(–s2);
-border: 1px solid var(–border);
-border-radius: 14px;
-padding: 16px;
+  background: var(--s2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
 }
 .stat-card-val {
-font-family: ‘Bebas Neue’, sans-serif;
-font-size: 36px;
-letter-spacing: 1px;
-color: var(–acc);
-line-height: 1;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  letter-spacing: 1px;
+  color: var(--acc);
+  line-height: 1;
 }
 .stat-card-label {
-font-size: 10px;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(–muted2);
-margin-top: 4px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted2);
+  margin-top: 4px;
 }
 
 .week-dots {
-display: flex;
-gap: 6px;
-padding: 0 16px 16px;
-flex-wrap: wrap;
+  display: flex;
+  gap: 6px;
+  padding: 0 16px 16px;
+  flex-wrap: wrap;
 }
 .week-dot {
-width: 32px; height: 32px;
-border-radius: 8px;
-background: var(–s2);
-border: 1px solid var(–border);
-display: flex; align-items: center; justify-content: center;
-font-size: 10px;
-color: var(–muted2);
-font-weight: 500;
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: var(--s2);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px;
+  color: var(--muted2);
+  font-weight: 500;
 }
-.week-dot.done { background: #c8ff0020; border-color: var(–acc); color: var(–acc); }
-.week-dot.swim-done { background: #4da6ff20; border-color: var(–blue); color: var(–blue); }
+.week-dot.done { background: #c8ff0020; border-color: var(--acc); color: var(--acc); }
+.week-dot.swim-done { background: #4da6ff20; border-color: var(--blue); color: var(--blue); }
 
 /* TIMELINE */
 .timeline {
-padding: 0 16px;
-position: relative;
+  padding: 0 16px;
+  position: relative;
 }
 .tl-line {
-position: absolute;
-left: 28px; top: 0; bottom: 0;
-width: 1px;
-background: var(–border);
+  position: absolute;
+  left: 28px; top: 0; bottom: 0;
+  width: 1px;
+  background: var(--border);
 }
 .tl-item {
-display: flex;
-gap: 16px;
-margin-bottom: 20px;
-position: relative;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  position: relative;
 }
 .tl-dot {
-width: 12px; height: 12px;
-border-radius: 50%;
-background: var(–acc);
-margin-top: 4px;
-flex-shrink: 0;
-position: relative;
-z-index: 1;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--acc);
+  margin-top: 4px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
 }
 .tl-body {}
 .tl-month {
-font-family: ‘Bebas Neue’, sans-serif;
-font-size: 18px;
-letter-spacing: 1px;
-color: var(–acc);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: var(--acc);
 }
-.tl-desc { font-size: 13px; color: var(–muted2); line-height: 1.6; margin-top: 2px; }
+.tl-desc { font-size: 13px; color: var(--muted2); line-height: 1.6; margin-top: 2px; }
 .tl-desc strong { color: #f2f2f2 !important; font-weight: 500; }
 
 /* ANIMATIONS */
 @keyframes fadeUp {
-from { opacity: 0; transform: translateY(12px); }
-to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 .screen.active > * { animation: fadeUp 0.25s ease both; }
 
 /* TOAST */
 #toast {
-position: fixed;
-bottom: calc(80px + var(–safe-bot) + 12px);
-left: 50%; transform: translateX(-50%) translateY(20px);
-background: var(–acc);
-color: #000;
-font-size: 13px;
-font-weight: 600;
-padding: 10px 20px;
-border-radius: 20px;
-opacity: 0;
-transition: all 0.3s;
-pointer-events: none;
-white-space: nowrap;
-z-index: 200;
+  position: fixed;
+  bottom: calc(80px + var(--safe-bot) + 12px);
+  left: 50%; transform: translateX(-50%) translateY(20px);
+  background: var(--acc);
+  color: #000;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: all 0.3s;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 200;
 }
 #toast.show {
-opacity: 1;
-transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 /* ── FORCE DARK (Safari iOS fix) ── */
 @media (prefers-color-scheme: light) {
-html, body { background: #080808 !important; color: #f2f2f2 !important; }
-.hero { background: linear-gradient(135deg, #0f0f0f 0%, #080808 100%) !important; }
-.today-card, .log-tile, .water-card, .sleep-card, .day-row, .log-section, .note-composer, .note-card, .stat-card, .nutrition-card, .history-item, .streak-pill { background: #161616 !important; border-color: #262626 !important; }
-.page-header, #nav { background: rgba(8,8,8,0.95) !important; border-color: #262626 !important; }
-.section-label { color: #555 !important; }
-.hero-date, .hero-sub, .day-row-focus, .tile-sub, .ex-note, .muted2 { color: #888 !important; }
-.hero-greeting, .today-title, .day-row-name, .tile-label, .ex-name, .check-text, .note-card-body { color: #f2f2f2 !important; }
-.nav-btn { color: #555 !important; }
-.nav-btn.active { color: #c8ff00 !important; }
+  html, body { background: #080808 !important; color: #f2f2f2 !important; }
+  .hero { background: linear-gradient(135deg, #0f0f0f 0%, #080808 100%) !important; }
+  .today-card, .log-tile, .water-card, .sleep-card, .day-row, .log-section, .note-composer, .note-card, .stat-card, .nutrition-card, .history-item, .streak-pill { background: #161616 !important; border-color: #262626 !important; }
+  .page-header, #nav { background: rgba(8,8,8,0.95) !important; border-color: #262626 !important; }
+  .section-label { color: #555 !important; }
+  .hero-date, .hero-sub, .day-row-focus, .tile-sub, .ex-note, .muted2 { color: #888 !important; }
+  .hero-greeting, .today-title, .day-row-name, .tile-label, .ex-name, .check-text, .note-card-body { color: #f2f2f2 !important; }
+  .nav-btn { color: #555 !important; }
+  .nav-btn.active { color: #c8ff00 !important; }
 }
 </style>
-
 </head>
 <body>
 <div id="app">
 
   <!-- ═══════════════ HOME ═══════════════ -->
-
   <div class="screen active" id="screen-home">
     <div class="hero">
       <div class="hero-date" id="hero-date"></div>
@@ -810,288 +807,268 @@ html, body { background: #080808 !important; color: #f2f2f2 !important; }
       </div>
     </div>
 
-```
-<div class="section-label">Oggi</div>
-<div class="today-card" id="today-card">
-  <div class="today-header">
-    <div class="today-title" id="today-workout-title">—</div>
-    <span class="today-badge badge-train" id="today-badge">—</span>
-  </div>
-  <div style="padding:14px 16px;">
-    <div id="today-preview" style="font-size:13px; color:var(--muted2); line-height:1.7;"></div>
-  </div>
-</div>
+    <div class="section-label">Oggi</div>
+    <div class="today-card" id="today-card">
+      <div class="today-header">
+        <div class="today-title" id="today-workout-title">—</div>
+        <span class="today-badge badge-train" id="today-badge">—</span>
+      </div>
+      <div style="padding:14px 16px;">
+        <div id="today-preview" style="font-size:13px; color:var(--muted2); line-height:1.7;"></div>
+      </div>
+    </div>
 
-<div class="section-label">Check rapido</div>
-<div class="quick-log">
-  <div class="log-tile" id="tile-allenamento" onclick="quickCheck('allenamento')">
-    <div class="tile-icon">🏋️</div>
-    <div class="tile-label">Allenamento</div>
-    <div class="tile-sub">Sessione completata</div>
-  </div>
-  <div class="log-tile" id="tile-alimentazione" onclick="quickCheck('alimentazione')">
-    <div class="tile-icon">🥗</div>
-    <div class="tile-label">Alimentazione</div>
-    <div class="tile-sub">Dieta rispettata</div>
-  </div>
-  <div class="log-tile" id="tile-proteine" onclick="quickCheck('proteine')">
-    <div class="tile-icon">💪</div>
-    <div class="tile-label">Proteine</div>
-    <div class="tile-sub">160g raggiunti</div>
-  </div>
-  <div class="log-tile" id="tile-nuoto" onclick="quickCheck('nuoto')">
-    <div class="tile-icon">🏊</div>
-    <div class="tile-label">Nuoto</div>
-    <div class="tile-sub">Sessione in piscina</div>
-  </div>
-</div>
+    <div class="section-label">Check rapido</div>
+    <div class="quick-log">
+      <div class="log-tile" id="tile-allenamento" onclick="quickCheck('allenamento')">
+        <div class="tile-icon">🏋️</div>
+        <div class="tile-label">Allenamento</div>
+        <div class="tile-sub">Sessione completata</div>
+      </div>
+      <div class="log-tile" id="tile-alimentazione" onclick="quickCheck('alimentazione')">
+        <div class="tile-icon">🥗</div>
+        <div class="tile-label">Alimentazione</div>
+        <div class="tile-sub">Dieta rispettata</div>
+      </div>
+      <div class="log-tile" id="tile-proteine" onclick="quickCheck('proteine')">
+        <div class="tile-icon">💪</div>
+        <div class="tile-label">Proteine</div>
+        <div class="tile-sub">160g raggiunti</div>
+      </div>
+      <div class="log-tile" id="tile-nuoto" onclick="quickCheck('nuoto')">
+        <div class="tile-icon">🏊</div>
+        <div class="tile-label">Nuoto</div>
+        <div class="tile-sub">Sessione in piscina</div>
+      </div>
+    </div>
 
-<div class="section-label">Acqua</div>
-<div class="water-card">
-  <div class="water-header">
-    <div class="water-title">💧 Acqua bevuta</div>
-    <div class="water-amount" id="water-display">0 / 10</div>
-  </div>
-  <div class="water-glasses" id="water-glasses"></div>
-</div>
+    <div class="section-label">Acqua</div>
+    <div class="water-card">
+      <div class="water-header">
+        <div class="water-title">💧 Acqua bevuta</div>
+        <div class="water-amount" id="water-display">0 / 10</div>
+      </div>
+      <div class="water-glasses" id="water-glasses"></div>
+    </div>
 
-<div class="section-label">Sonno</div>
-<div class="sleep-card">
-  <div class="sleep-header">
-    <div class="sleep-title">🌙 Ore di sonno</div>
-    <div class="sleep-val" id="sleep-display">—</div>
-  </div>
-  <div class="sleep-btns">
-    <button class="sleep-opt" onclick="setSleep(5)">5h</button>
-    <button class="sleep-opt" onclick="setSleep(6)">6h</button>
-    <button class="sleep-opt" onclick="setSleep(7)">7h</button>
-    <button class="sleep-opt" onclick="setSleep(8)">8h</button>
-    <button class="sleep-opt" onclick="setSleep(9)">9h+</button>
-  </div>
-</div>
-```
-
+    <div class="section-label">Sonno</div>
+    <div class="sleep-card">
+      <div class="sleep-header">
+        <div class="sleep-title">🌙 Ore di sonno</div>
+        <div class="sleep-val" id="sleep-display">—</div>
+      </div>
+      <div class="sleep-btns">
+        <button class="sleep-opt" onclick="setSleep(5)">5h</button>
+        <button class="sleep-opt" onclick="setSleep(6)">6h</button>
+        <button class="sleep-opt" onclick="setSleep(7)">7h</button>
+        <button class="sleep-opt" onclick="setSleep(8)">8h</button>
+        <button class="sleep-opt" onclick="setSleep(9)">9h+</button>
+      </div>
+    </div>
   </div>
 
   <!-- ═══════════════ SCHEDA ═══════════════ -->
-
   <div class="screen" id="screen-scheda">
     <div class="page-header">
       <div class="page-tag">Fase 1 · Sett. 1–8</div>
       <div class="page-title">SCHEDA</div>
     </div>
 
-```
-<div class="section-label">Settimana tipo</div>
-<div id="scheda-days"></div>
+    <div class="section-label">Settimana tipo</div>
+    <div id="scheda-days"></div>
 
-<div class="section-label" style="padding-top:8px;">Fase 2 · Sett. 9–16</div>
-<div style="margin:0 16px 16px; background:var(--s2); border:1px solid #c8ff0025; border-radius:14px; padding:16px 18px;">
-  <div style="font-size:12px; font-weight:600; color:var(--acc); letter-spacing:1px; margin-bottom:8px;">⚡ PROGRESSIONE</div>
-  <div style="font-size:13px; color:var(--muted2); line-height:1.7;">Aggiungi manubri 10–15kg, elastici più resistenti o palestra. Stessi pattern, più carico. Overhead press, chest fly, cable crunch. Il nuoto rimane ma aggiungi dorso e farfalla per le spalle.</div>
-</div>
-<div style="margin:0 16px 16px; background:#4da6ff08; border:1px solid #4da6ff30; border-radius:14px; padding:16px 18px;">
-  <div style="font-size:12px; font-weight:600; color:var(--blue); letter-spacing:1px; margin-bottom:10px;">🌊 PERCHÉ IL NUOTO È UNA BOMBA</div>
-  <div style="display:flex; flex-direction:column; gap:8px;">
-    <div style="font-size:13px; color:var(--muted2); padding-left:14px; position:relative;">
-      <span style="position:absolute;left:0;color:var(--blue);">→</span>Crawl e dorso lavorano deltoidi e dorsali come pochi esercizi
+    <div class="section-label" style="padding-top:8px;">Fase 2 · Sett. 9–16</div>
+    <div style="margin:0 16px 16px; background:var(--s2); border:1px solid #c8ff0025; border-radius:14px; padding:16px 18px;">
+      <div style="font-size:12px; font-weight:600; color:var(--acc); letter-spacing:1px; margin-bottom:8px;">⚡ PROGRESSIONE</div>
+      <div style="font-size:13px; color:var(--muted2); line-height:1.7;">Aggiungi manubri 10–15kg, elastici più resistenti o palestra. Stessi pattern, più carico. Overhead press, chest fly, cable crunch. Il nuoto rimane ma aggiungi dorso e farfalla per le spalle.</div>
     </div>
-    <div style="font-size:13px; color:var(--muted2); padding-left:14px; position:relative;">
-      <span style="position:absolute;left:0;color:var(--blue);">→</span>400–600 kcal/ora, zero stress articolare
+    <div style="margin:0 16px 16px; background:#4da6ff08; border:1px solid #4da6ff30; border-radius:14px; padding:16px 18px;">
+      <div style="font-size:12px; font-weight:600; color:var(--blue); letter-spacing:1px; margin-bottom:10px;">🌊 PERCHÉ IL NUOTO È UNA BOMBA</div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <div style="font-size:13px; color:var(--muted2); padding-left:14px; position:relative;">
+          <span style="position:absolute;left:0;color:var(--blue);">→</span>Crawl e dorso lavorano deltoidi e dorsali come pochi esercizi
+        </div>
+        <div style="font-size:13px; color:var(--muted2); padding-left:14px; position:relative;">
+          <span style="position:absolute;left:0;color:var(--blue);">→</span>400–600 kcal/ora, zero stress articolare
+        </div>
+        <div style="font-size:13px; color:var(--muted2); padding-left:14px; position:relative;">
+          <span style="position:absolute;left:0;color:var(--blue);">→</span>La rotazione costruisce obliqui — addome laterale definito
+        </div>
+        <div style="font-size:13px; color:var(--muted2); padding-left:14px; position:relative;">
+          <span style="position:absolute;left:0;color:var(--blue);">→</span>Recupero attivo tra i giorni a terra
+        </div>
+      </div>
     </div>
-    <div style="font-size:13px; color:var(--muted2); padding-left:14px; position:relative;">
-      <span style="position:absolute;left:0;color:var(--blue);">→</span>La rotazione costruisce obliqui — addome laterale definito
-    </div>
-    <div style="font-size:13px; color:var(--muted2); padding-left:14px; position:relative;">
-      <span style="position:absolute;left:0;color:var(--blue);">→</span>Recupero attivo tra i giorni a terra
-    </div>
-  </div>
-</div>
-```
-
   </div>
 
   <!-- ═══════════════ DIARIO ═══════════════ -->
-
   <div class="screen" id="screen-diario">
     <div class="page-header">
       <div class="page-tag">Traccia i progressi</div>
       <div class="page-title">DIARIO</div>
     </div>
 
-```
-<div class="date-strip" id="date-strip"></div>
+    <div class="date-strip" id="date-strip"></div>
 
-<div class="log-form" id="log-form">
-  <div class="log-section">
-    <div class="log-section-title">🏋️ Allenamento</div>
-    <div class="check-list">
-      <div class="check-item" onclick="toggleCheck(this,'workout')">
-        <div class="check-box">✓</div>
-        <div><div class="check-text">Sessione completata</div></div>
+    <div class="log-form" id="log-form">
+      <div class="log-section">
+        <div class="log-section-title">🏋️ Allenamento</div>
+        <div class="check-list">
+          <div class="check-item" onclick="toggleCheck(this,'workout')">
+            <div class="check-box">✓</div>
+            <div><div class="check-text">Sessione completata</div></div>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this,'intensity')">
+            <div class="check-box">✓</div>
+            <div><div class="check-text">Alta intensità</div><div class="check-sub">Ti sei spinto davvero</div></div>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this,'stretch')">
+            <div class="check-box">✓</div>
+            <div><div class="check-text">Stretching post</div></div>
+          </div>
+        </div>
       </div>
-      <div class="check-item" onclick="toggleCheck(this,'intensity')">
-        <div class="check-box">✓</div>
-        <div><div class="check-text">Alta intensità</div><div class="check-sub">Ti sei spinto davvero</div></div>
+
+      <div class="log-section">
+        <div class="log-section-title">🏊 Nuoto</div>
+        <div class="check-list">
+          <div class="check-item" onclick="toggleCheck(this,'swim')">
+            <div class="check-box">✓</div>
+            <div><div class="check-text">Sessione in piscina</div></div>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this,'swim1000')">
+            <div class="check-box">✓</div>
+            <div><div class="check-text">1000m+ completati</div></div>
+          </div>
+        </div>
       </div>
-      <div class="check-item" onclick="toggleCheck(this,'stretch')">
-        <div class="check-box">✓</div>
-        <div><div class="check-text">Stretching post</div></div>
+
+      <div class="log-section">
+        <div class="log-section-title">🥗 Alimentazione</div>
+        <div class="check-list">
+          <div class="check-item" onclick="toggleCheck(this,'diet')">
+            <div class="check-box">✓</div>
+            <div><div class="check-text">Dieta rispettata</div></div>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this,'protein')">
+            <div class="check-box">✓</div>
+            <div><div class="check-text">160g proteine raggiunte</div></div>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this,'nocarbs')">
+            <div class="check-box">✓</div>
+            <div><div class="check-text">No carb la sera</div></div>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this,'noalc')">
+            <div class="check-box">✓</div>
+            <div><div class="check-text">No alcol</div></div>
+          </div>
+        </div>
       </div>
+
+      <div class="log-section">
+        <div class="log-section-title">⭐ Come ti senti oggi?</div>
+        <div class="rating-row">
+          <div class="rating-label">Energia</div>
+          <div class="rating-stars" id="stars-energy">
+            <span class="star" onclick="setRating('energy',1)">●</span>
+            <span class="star" onclick="setRating('energy',2)">●</span>
+            <span class="star" onclick="setRating('energy',3)">●</span>
+            <span class="star" onclick="setRating('energy',4)">●</span>
+            <span class="star" onclick="setRating('energy',5)">●</span>
+          </div>
+        </div>
+        <div class="rating-row" style="border-top:1px solid var(--border);">
+          <div class="rating-label">Umore</div>
+          <div class="rating-stars" id="stars-mood">
+            <span class="star" onclick="setRating('mood',1)">●</span>
+            <span class="star" onclick="setRating('mood',2)">●</span>
+            <span class="star" onclick="setRating('mood',3)">●</span>
+            <span class="star" onclick="setRating('mood',4)">●</span>
+            <span class="star" onclick="setRating('mood',5)">●</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="log-section">
+        <div class="log-section-title">📝 Note del giorno</div>
+        <textarea class="notes-area" id="diary-notes" placeholder="Come è andata? Dolori muscolari, progressi notati, cosa hai mangiato…"></textarea>
+      </div>
+
+      <button class="save-btn" onclick="saveDiaryLog()">SALVA GIORNATA</button>
+
+      <div class="section-label" style="padding-left:0">Ultime giornate</div>
+      <div id="history-list"></div>
     </div>
-  </div>
-
-  <div class="log-section">
-    <div class="log-section-title">🏊 Nuoto</div>
-    <div class="check-list">
-      <div class="check-item" onclick="toggleCheck(this,'swim')">
-        <div class="check-box">✓</div>
-        <div><div class="check-text">Sessione in piscina</div></div>
-      </div>
-      <div class="check-item" onclick="toggleCheck(this,'swim1000')">
-        <div class="check-box">✓</div>
-        <div><div class="check-text">1000m+ completati</div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="log-section">
-    <div class="log-section-title">🥗 Alimentazione</div>
-    <div class="check-list">
-      <div class="check-item" onclick="toggleCheck(this,'diet')">
-        <div class="check-box">✓</div>
-        <div><div class="check-text">Dieta rispettata</div></div>
-      </div>
-      <div class="check-item" onclick="toggleCheck(this,'protein')">
-        <div class="check-box">✓</div>
-        <div><div class="check-text">160g proteine raggiunte</div></div>
-      </div>
-      <div class="check-item" onclick="toggleCheck(this,'nocarbs')">
-        <div class="check-box">✓</div>
-        <div><div class="check-text">No carb la sera</div></div>
-      </div>
-      <div class="check-item" onclick="toggleCheck(this,'noalc')">
-        <div class="check-box">✓</div>
-        <div><div class="check-text">No alcol</div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="log-section">
-    <div class="log-section-title">⭐ Come ti senti oggi?</div>
-    <div class="rating-row">
-      <div class="rating-label">Energia</div>
-      <div class="rating-stars" id="stars-energy">
-        <span class="star" onclick="setRating('energy',1)">●</span>
-        <span class="star" onclick="setRating('energy',2)">●</span>
-        <span class="star" onclick="setRating('energy',3)">●</span>
-        <span class="star" onclick="setRating('energy',4)">●</span>
-        <span class="star" onclick="setRating('energy',5)">●</span>
-      </div>
-    </div>
-    <div class="rating-row" style="border-top:1px solid var(--border);">
-      <div class="rating-label">Umore</div>
-      <div class="rating-stars" id="stars-mood">
-        <span class="star" onclick="setRating('mood',1)">●</span>
-        <span class="star" onclick="setRating('mood',2)">●</span>
-        <span class="star" onclick="setRating('mood',3)">●</span>
-        <span class="star" onclick="setRating('mood',4)">●</span>
-        <span class="star" onclick="setRating('mood',5)">●</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="log-section">
-    <div class="log-section-title">📝 Note del giorno</div>
-    <textarea class="notes-area" id="diary-notes" placeholder="Come è andata? Dolori muscolari, progressi notati, cosa hai mangiato…"></textarea>
-  </div>
-
-  <button class="save-btn" onclick="saveDiaryLog()">SALVA GIORNATA</button>
-
-  <div class="section-label" style="padding-left:0">Ultime giornate</div>
-  <div id="history-list"></div>
-</div>
-```
-
   </div>
 
   <!-- ═══════════════ NOTE ═══════════════ -->
-
   <div class="screen" id="screen-note">
     <div class="page-header">
       <div class="page-tag">Appunti liberi</div>
       <div class="page-title">NOTE</div>
     </div>
 
-```
-<div style="padding:12px 16px 0;">
-  <div class="note-composer">
-    <textarea class="note-input" id="note-input" placeholder="Scrivi un appunto, un'idea, un obiettivo…"></textarea>
-    <div class="note-footer">
-      <div class="note-tags">
-        <button class="tag-btn sel" id="tag-generico" onclick="selectTag('generico')">Generale</button>
-        <button class="tag-btn" id="tag-fisico" onclick="selectTag('fisico')">Fisico</button>
-        <button class="tag-btn" id="tag-cibo" onclick="selectTag('cibo')">Cibo</button>
-        <button class="tag-btn" id="tag-goal" onclick="selectTag('goal')">Goal</button>
+    <div style="padding:12px 16px 0;">
+      <div class="note-composer">
+        <textarea class="note-input" id="note-input" placeholder="Scrivi un appunto, un'idea, un obiettivo…"></textarea>
+        <div class="note-footer">
+          <div class="note-tags">
+            <button class="tag-btn sel" id="tag-generico" onclick="selectTag('generico')">Generale</button>
+            <button class="tag-btn" id="tag-fisico" onclick="selectTag('fisico')">Fisico</button>
+            <button class="tag-btn" id="tag-cibo" onclick="selectTag('cibo')">Cibo</button>
+            <button class="tag-btn" id="tag-goal" onclick="selectTag('goal')">Goal</button>
+          </div>
+          <button class="note-send" onclick="addNote()">SALVA</button>
+        </div>
       </div>
-      <button class="note-send" onclick="addNote()">SALVA</button>
     </div>
-  </div>
-</div>
 
-<div class="section-label">Tutti gli appunti</div>
-<div id="notes-list"></div>
-```
-
+    <div class="section-label">Tutti gli appunti</div>
+    <div id="notes-list"></div>
   </div>
 
   <!-- ═══════════════ STATS ═══════════════ -->
-
   <div class="screen" id="screen-stats">
     <div class="page-header">
       <div class="page-tag">I tuoi numeri</div>
       <div class="page-title">STATS</div>
     </div>
 
-```
-<div class="section-label">Totali</div>
-<div class="stats-grid">
-  <div class="stat-card">
-    <div class="stat-card-val" id="s-workouts">0</div>
-    <div class="stat-card-label">Sessioni gym</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-card-val" id="s-swims">0</div>
-    <div class="stat-card-label">Sessioni nuoto</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-card-val" id="s-streak">0</div>
-    <div class="stat-card-label">Streak giorni</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-card-val" id="s-diet">0</div>
-    <div class="stat-card-label">Giorni dieta</div>
-  </div>
-</div>
+    <div class="section-label">Totali</div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-card-val" id="s-workouts">0</div>
+        <div class="stat-card-label">Sessioni gym</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-val" id="s-swims">0</div>
+        <div class="stat-card-label">Sessioni nuoto</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-val" id="s-streak">0</div>
+        <div class="stat-card-label">Streak giorni</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-val" id="s-diet">0</div>
+        <div class="stat-card-label">Giorni dieta</div>
+      </div>
+    </div>
 
-<div class="section-label">Ultimi 14 giorni</div>
-<div class="week-dots" id="week-dots"></div>
+    <div class="section-label">Ultimi 14 giorni</div>
+    <div class="week-dots" id="week-dots"></div>
 
-<div class="section-label">Timeline obiettivi</div>
-<div class="timeline">
-  <div class="tl-line"></div>
-  <div class="tl-item"><div class="tl-dot"></div><div class="tl-body"><div class="tl-month">Ora → Sett. 2</div><div class="tl-desc">Solo alimentazione. <strong>-1/2 kg di gonfiore visivo</strong>, pancia meno tesa.</div></div></div>
-  <div class="tl-item"><div class="tl-dot"></div><div class="tl-body"><div class="tl-month">Sett. 3–4</div><div class="tl-desc">Inizio allenamento + nuoto. Muscle memory si risveglia. <strong>Prime sensazioni di tono.</strong></div></div></div>
-  <div class="tl-item"><div class="tl-dot"></div><div class="tl-body"><div class="tl-month">Mese 2 · Aprile</div><div class="tl-desc"><strong>Addome più piatto</strong>, prime linee sul petto. -2/3 kg di grasso reale.</div></div></div>
-  <div class="tl-item"><div class="tl-dot"></div><div class="tl-body"><div class="tl-month">Mese 3 · Maggio</div><div class="tl-desc">Fase 2 inizia. <strong>Addome definito in piedi</strong>, deltoidi visibili. -4/5 kg totali.</div></div></div>
-  <div class="tl-item"><div class="tl-dot"></div><div class="tl-body"><div class="tl-month">Giugno → Estate 🔥</div><div class="tl-desc"><strong>Obiettivo raggiunto.</strong> Addome secco, spalle tonde, petto pieno. 74–76 kg tutto muscolo.</div></div></div>
-</div>
-```
-
+    <div class="section-label">Timeline obiettivi</div>
+    <div class="timeline">
+      <div class="tl-line"></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-body"><div class="tl-month">Ora → Sett. 2</div><div class="tl-desc">Solo alimentazione. <strong>-1/2 kg di gonfiore visivo</strong>, pancia meno tesa.</div></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-body"><div class="tl-month">Sett. 3–4</div><div class="tl-desc">Inizio allenamento + nuoto. Muscle memory si risveglia. <strong>Prime sensazioni di tono.</strong></div></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-body"><div class="tl-month">Mese 2 · Aprile</div><div class="tl-desc"><strong>Addome più piatto</strong>, prime linee sul petto. -2/3 kg di grasso reale.</div></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-body"><div class="tl-month">Mese 3 · Maggio</div><div class="tl-desc">Fase 2 inizia. <strong>Addome definito in piedi</strong>, deltoidi visibili. -4/5 kg totali.</div></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-body"><div class="tl-month">Giugno → Estate 🔥</div><div class="tl-desc"><strong>Obiettivo raggiunto.</strong> Addome secco, spalle tonde, petto pieno. 74–76 kg tutto muscolo.</div></div></div>
+    </div>
   </div>
 
   <!-- BOTTOM NAV -->
-
   <div id="nav">
     <button class="nav-btn active" onclick="goTo('home',this)">
       <span class="nav-icon">⚡</span><span class="nav-label">Home</span>
@@ -1544,6 +1521,5 @@ function toast(msg) {
 initHome();
 renderScheda();
 </script>
-
 </body>
 </html>
