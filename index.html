@@ -8,10 +8,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Beach Ready">
 <meta name="theme-color" content="#0a0a0a">
-<title>ANG ALIVE</title>
+<meta name="color-scheme" content="dark">
+<style>:root {
+  color-scheme: dark; }</style>
+<title>Beach Ready</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
 <style>
 :root {
+  color-scheme: dark;
   --bg: #080808;
   --s1: #101010;
   --s2: #161616;
@@ -29,11 +33,11 @@
 }
 
 - { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-  html { height:100%; }
+  html { height:100%; background:#080808; }
 
 body {
-background: var(–bg);
-color: var(–text);
+background: #080808 !important;
+color: #f2f2f2 !important;
 font-family: ‘DM Sans’, sans-serif;
 height: 100%;
 overflow: hidden;
@@ -146,6 +150,7 @@ background: radial-gradient(circle, #c8ff0015 0%, transparent 70%);
 pointer-events: none;
 }
 .hero-date {
+color: #888 !important;
 font-size: 11px;
 letter-spacing: 2px;
 text-transform: uppercase;
@@ -160,7 +165,7 @@ line-height: 1;
 margin-bottom: 4px;
 }
 .hero-greeting span { color: var(–acc); }
-.hero-sub { font-size: 13px; color: var(–muted2); margin-bottom: 20px; }
+.hero-sub { font-size: 13px; color: #888 !important; margin-bottom: 20px; }
 
 .streak-row {
 display: flex;
@@ -243,7 +248,7 @@ color: var(–acc);
 font-weight: 700;
 }
 .tile-icon { font-size: 22px; margin-bottom: 8px; }
-.tile-label { font-size: 12px; font-weight: 500; color: var(–text); }
+.tile-label { font-size: 12px; font-weight: 500; color: #f2f2f2 !important; }
 .tile-sub { font-size: 11px; color: var(–muted2); margin-top: 2px; }
 
 /* WATER TRACKER */
@@ -481,7 +486,7 @@ border-color: var(–acc);
 color: #000;
 font-weight: 700;
 }
-.check-text { font-size: 13px; color: var(–text); }
+.check-text { font-size: 13px; color: #f2f2f2 !important; }
 .check-sub { font-size: 11px; color: var(–muted2); margin-top: 1px; }
 
 /* RATING */
@@ -507,7 +512,7 @@ transition: opacity 0.15s, transform 0.1s;
 width: 100%;
 background: none;
 border: none;
-color: var(–text);
+color: #f2f2f2 !important;
 font-family: ‘DM Sans’, sans-serif;
 font-size: 14px;
 line-height: 1.7;
@@ -577,7 +582,7 @@ overflow: hidden;
 width: 100%;
 background: none;
 border: none;
-color: var(–text);
+color: #f2f2f2 !important;
 font-family: ‘DM Sans’, sans-serif;
 font-size: 14px;
 line-height: 1.7;
@@ -641,7 +646,7 @@ background: #c8ff0015;
 color: var(–acc);
 border: 1px solid #c8ff0030;
 }
-.note-card-body { font-size: 13px; line-height: 1.6; color: var(–text); }
+.note-card-body { font-size: 13px; line-height: 1.6; color: #f2f2f2 !important; }
 .note-del {
 background: none;
 border: none;
@@ -733,7 +738,7 @@ letter-spacing: 1px;
 color: var(–acc);
 }
 .tl-desc { font-size: 13px; color: var(–muted2); line-height: 1.6; margin-top: 2px; }
-.tl-desc strong { color: var(–text); font-weight: 500; }
+.tl-desc strong { color: #f2f2f2 !important; font-weight: 500; }
 
 /* ANIMATIONS */
 @keyframes fadeUp {
@@ -762,6 +767,18 @@ z-index: 200;
 #toast.show {
 opacity: 1;
 transform: translateX(-50%) translateY(0);
+}
+/* ── FORCE DARK (Safari iOS fix) ── */
+@media (prefers-color-scheme: light) {
+html, body { background: #080808 !important; color: #f2f2f2 !important; }
+.hero { background: linear-gradient(135deg, #0f0f0f 0%, #080808 100%) !important; }
+.today-card, .log-tile, .water-card, .sleep-card, .day-row, .log-section, .note-composer, .note-card, .stat-card, .nutrition-card, .history-item, .streak-pill { background: #161616 !important; border-color: #262626 !important; }
+.page-header, #nav { background: rgba(8,8,8,0.95) !important; border-color: #262626 !important; }
+.section-label { color: #555 !important; }
+.hero-date, .hero-sub, .day-row-focus, .tile-sub, .ex-note, .muted2 { color: #888 !important; }
+.hero-greeting, .today-title, .day-row-name, .tile-label, .ex-name, .check-text, .note-card-body { color: #f2f2f2 !important; }
+.nav-btn { color: #555 !important; }
+.nav-btn.active { color: #c8ff00 !important; }
 }
 </style>
 
